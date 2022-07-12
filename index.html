@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste Metys</title>
+
+    <style>
+
+      body,
+      h1,
+      h2,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      #product > div {
+        padding: 15px;
+        display: flex;
+        align-items: flex-start;
+        margin: auto;
+        width: 100%;
+      }
+
+      .list {
+        list-style-type: none;
+        padding: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
+        line-height: 23px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+      }
+
+      .img {
+        width: 250px;
+        height: 250px;
+      }
+
+      .header, .footer {
+        background-color: #fcba03;
+        padding: 3px;
+      }
+
+      .button {
+        /* border: 1px black solid; */
+        border-radius: 15px;
+        height: 30px;
+        margin-left: 150px;
+        /* background-color: darkslategrey; */
+        color: black;
+        transition: 300ms all linear;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background: lightgoldenrodyellow;
+        filter: brightness(0.8);
+        transition: linear 200ms;
+      }
+
+      .button:active {
+        background-color: khaki;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+    </style>
+  </head>
+  <header>
+    <div class="header">
+      <h1>
+        Metyis FE interview
+      </h1>
+    </div>
+  </header>
+  <section>
+    <div id="product">
+
+      <div>
+        <img class="img" src="https://i.pinimg.com/originals/62/98/b0/6298b026a65cf80bcf9dce061e9b79c9.png" alt="T-shirt">
+
+        <ul class="list">
+          <li>Classic t-shirt</li>
+          <li>Color: Black</li>
+          <li>Size: M</li>
+          <li>Fabric: 100% cotton</li>
+        </ul>
+      </div>
+
+      <div>
+        <button class="button" onclick="addMoreShirts()">
+          Add more shirts
+        </button>
+      </div>
+    </div>
+  
+  </section>
+  
+  <footer class="footer">
+    © Arthur 2022
+  </footer>
+  
+
+    <script>
+function addMoreShirts() {
+  const product = document.getElementById('product')
+  
+  const clone = product.cloneNode(true)
+  
+  const footer = document.getElementsByTagName('footer').item(0)
+  document.body.insertBefore(clone, footer) 
+}
+    </script>
+  </body>
+</html>
